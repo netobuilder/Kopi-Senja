@@ -678,3 +678,38 @@ footer {
         font-size: 38px;
     }
 }
+
+/* ============================= */
+/* MOBILE SCROLL NAVBAR ANIMATION */
+/* ============================= */
+
+@media (max-width: 600px) {
+    .navbar {
+        transition: padding 0.3s ease, gap 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-links {
+        overflow: hidden;
+        max-height: 60px;
+        opacity: 1;
+        transform: translateY(0);
+        transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.3s ease;
+    }
+
+    .navbar.nav-compact {
+        padding: 12px 4%;
+        gap: 0;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .navbar.nav-compact .nav-links {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+
+    .navbar.nav-compact h3 {
+        font-size: 24px;
+    }
+}
